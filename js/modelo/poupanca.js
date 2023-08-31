@@ -1,8 +1,7 @@
-class Conta {
-
-    constructor(numero, saldo=0) {
-        this.saldo = saldo;
-        this.numero = numero;
+class Poupanca extends Conta {
+    constructor(numero, saldo=0, dataAniversario) {
+        super(numero, saldo);
+        this.dataAniversario = dataAniversario;
     }
 
     debitar(valor){
@@ -19,5 +18,4 @@ class Conta {
         this.debitar(valor);
         destino.creditar(valor);
     }
-
 }
