@@ -19,10 +19,11 @@ class ContaController {
         const elementoSaldo = document.querySelector('#saldo');
         const elementoData = document.querySelector('#aniversario');
         const elementoTipo = document.querySelector('#tipos');
+        const tipo = elementoTipo.options[elementoTipo.selectedIndex].value;
 
         let conta = {};
 
-        switch (elementoTipo.options[elementoTipo.selectedIndex].value) {
+        switch (tipo) {
             case "conta":
                 conta = new Conta(elementoNumero.value,
                     Number(elementoSaldo.value));

@@ -20,4 +20,8 @@ class Conta {
         destino.creditar(valor);
     }
 
+    toString() {
+        return `Conta { Número : ${this.numero} | Saldo : ${this.saldo} }`
+    }
+
 }

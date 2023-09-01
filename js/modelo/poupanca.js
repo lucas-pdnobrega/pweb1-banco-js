@@ -1,21 +1,20 @@
 class Poupanca extends Conta {
-    constructor(numero, saldo=0, dataAniversario) {
+    constructor(numero, saldo, dataAniversario) {
         super(numero, saldo);
         this.dataAniversario = dataAniversario;
     }
 
-    debitar(valor){
-        if (this.saldo >= valor){
-            this.saldo -= valor;
+    creditar(valor){
+        super.creditar(valor);
+    }
+
+    juros(data) {
+        if (this.dataAniversario === data) {
+            this.creditar(super.saldo*0.05);
         }
     }
 
-    creditar(valor){
-        this.saldo += valor;
-    }
-
-    transferir(destino, valor){
-        this.debitar(valor);
-        destino.creditar(valor);
+    toString() {
+        return `Poupança { Número : ${super.numero} | Saldo : ${super.saldo} | Data Aniversário : ${this.dataAniversario} }`
     }
 }
