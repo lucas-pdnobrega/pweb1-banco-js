@@ -17,4 +17,12 @@ class Poupanca extends Conta {
     toString() {
         return `Poupança { Número : ${super.numero} | Saldo : ${super.saldo} | Data Aniversário : ${this.dataAniversario} }`
     }
+
+    get dataAniversario() {
+        return this.dataAniversario;
+    }
+
+    set dataAniversario(dataAniversario) {
+        this.dataAniversario = this.dataAniversario;
+    }
 }
